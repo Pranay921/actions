@@ -1,7 +1,7 @@
 name: practise-manual
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   demo:
@@ -15,7 +15,7 @@ jobs:
         run: whoami
 
       - name: current dir
-        run: dir
+        run: pwd
 
       - name: printing
         run: echo "Github Actions practise"
