@@ -1,0 +1,18 @@
+name: practise-manual
+
+on:
+  workflow_dispatch
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: current date
+        run: date
+
+      - name: current user
+        run: whoami
+
+      - name: current dir
+        run: dir
