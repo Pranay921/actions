@@ -1,0 +1,29 @@
+name: python-cache
+
+on:
+  push:
+
+jobs:
+  cache-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.10,3.11 ]
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: python setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{matrix.python-version}}
+
+      - name: python cache setup
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: python-cache-${{runner.os}}
+
+      - name: display python version
+        run: python --version
