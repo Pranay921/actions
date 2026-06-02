@@ -1,0 +1,23 @@
+name: js-workflow
+
+on:
+  push:
+
+jobs:
+  js-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: setting up node js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: create javascript file
+        run: echo "console.log('Welcome to GitHub Actions');" > app.js
+
+      - name: Execute JavaScript File
+        run: node app.js
