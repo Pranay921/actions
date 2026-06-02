@@ -1,0 +1,27 @@
+name: cache-demo
+on:
+  push:
+
+jobs:
+  cache-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18,20 ]
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: node setup 
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
+
+      - name: cache setup
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-cache-${{ runner.os }}
+
+      - name: display message
+        run: echo "setup of cache nd node is done"
