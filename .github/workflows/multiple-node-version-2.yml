@@ -1,0 +1,25 @@
+name: demo2
+on:
+  push:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18,20]
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: print version
+        run: node --version
+
+      - name: print node js
+        run: echo "node ${{ matrix.node-version }} is installed"
