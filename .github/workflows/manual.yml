@@ -1,0 +1,12 @@
+name: manual-workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs on: ubuntu-latest
+
+    steps:
+      - name: print mesage
+        run: echo "manual github action workflow executed"
