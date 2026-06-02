@@ -6,8 +6,8 @@ on:
 
 jobs:
   check:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checking quality
-      run: echo "checking the code quality"
+    steps:
+      - name: Checking quality
+        run: echo "checking the code quality"
