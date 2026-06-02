@@ -16,3 +16,6 @@ jobs:
 
       - name: current dir
         run: dir
+
+      - name: printing
+        run: echo "Github Actions practise"
