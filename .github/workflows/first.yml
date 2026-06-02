@@ -9,3 +9,9 @@ jobs:
     steps:
       - name: Print message
         run: echo "hello Github actions"
+
+      - name: Current Directory
+        run: pwd
+
+      - name: List files
+        run: ls
