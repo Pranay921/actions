@@ -1,0 +1,25 @@
+name: multi-job-2
+
+on:
+  push:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: compiling code
+        run: echo " the code is compiling "
+
+  verify:
+    runs-on: ubuntu-latest
+    needs: compile
+    steps:
+      - name: verifying code
+        run: echo " the code is beign verified "
+
+  release:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - name: releasing code
+        run: echo " the code is being released "
