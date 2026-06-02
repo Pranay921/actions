@@ -10,3 +10,9 @@ jobs:
     steps:
       - name: print mesage
         run: echo "manual github action workflow executed"
+
+      - name: display date
+        run: date
+
+      - name: show current user
+        run: whoami
