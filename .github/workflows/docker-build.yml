@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: show files
-        run: ls -la
+      - name: checkout repo
+        uses: actions/checkout@v4
 
       - name: build image
         run: docker build -t myapp .
+
+      - name: show images
+        run: docker images
