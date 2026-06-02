@@ -1,0 +1,24 @@
+name: multi-jobs
+on:
+  push:
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: display build message
+          run: echo "this is the display message from build job"
+
+    test:
+      runs-on: ubuntu-latest
+      steps:
+      - name: display test message
+        run: echo " this is the display message from test job"
+
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+      - name: display deploy message
+        run: echo "this is the display message from the depoloy job"
+
+      
